@@ -1,0 +1,84 @@
+
+    <nav class="bg-primary text py-2 text-center text-white mb-2" >
+        <h3>Number Crunch</h3>
+    </nav>
+    <div class="container-fluid d-flex justify-content-between">
+        <div class="left">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  View
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <a class="dropdown-item" href="#">Simple</a>
+                  <a class="dropdown-item" href="#">Bordered</a>
+                </div>
+              </div>
+             <ng-select
+             placeholder="View"
+             [(ngModel)]="selectedDesign"
+             (change)="changeDesign()"
+             >
+              <ng-option value="simple">Simple</ng-option>
+              <ng-option value="bordered">Bordered</ng-option>
+              </ng-select>
+        </div>
+        <div class="right">
+            <button class="btn btn-primary" href="#">Go Back</button>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-7">
+                <table
+                [ngClass]="bordered? 'table table-bordered table-striped' :'table table-border table-striped' " >
+
+                    <thead>
+
+                      <tr [ngClass]="simple? 'bg-dark text-white' : ''" >
+                        <th scope="col">Sample #</th>
+                        <th scope="col">Score</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+            </div>
+            <div class="col-md-4">
+                <h3 class=" text-center py-2" style="background-color: rgb(189, 179, 179)">Message</h3>
+               <p style="border: 1px solid black" class="py-4 px-2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eveniet rerum odit tenetur illum beatae laboriosam quis dolorum libero! Cumque adipisci architecto distinctio, laboriosam voluptas soluta animi eius nulla, sunt quibusdam consectetur deserunt maiores. Et placeat ab autem aliquam aspernatur sequi fugiat neque necessitatibus a eligendi voluptatum sint, soluta ipsam dolorem, magnam exercitationem porro modi dolor libero aliquid totam id repellendus esse. Quas quo maxime velit porro quod. </p>
+            </div>
+        </div>
+
+    </div>
+

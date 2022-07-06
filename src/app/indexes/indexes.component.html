@@ -1,0 +1,114 @@
+<p>indexes works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="bg-primary text py-2 text-center text-white">
+      <h3>Number Crunch</h3>
+    </nav>
+    <div class="container w-50 my-5">
+      <form [formGroup]="form">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label fs-4"
+            >Sample Max Count:</label
+          >
+          <div>
+               <input
+            type="number"
+            formControlName="maxCount"
+            class="form-control"
+            id="maxCount"
+            placeholder="Enter maximum count"
+            [class.is-invalid]="form.controls['maxCount'].invalid  && form.controls['maxCount'].touched"
+          />
+          <p *ngIf="form.controls['maxCount'].invalid  && form.controls['maxCount'].touched" class="text-danger">
+            Max count is not valid
+          </p>
+
+
+        </div>
+
+        </div>
+
+          <div class="mb-3">
+          <label for="exampleFormControlInput2" class="form-label fs-4"
+            >Patient Score:</label
+          >
+          <input
+            type="number"
+            formControlName="patient"
+            class="form-control"
+            id="patient"
+            placeholder="Enter patient score"
+            [class.is-invalid]="form.controls['patient'].invalid && form.controls['patient'].touched"
+            />
+            <p *ngIf="form.controls['patient'].invalid && form.controls['patient'].touched" class="text-danger">
+              patient is not valid
+            </p>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput3" class="form-label fs-4"
+            >Doctor Score:</label
+          >
+          <input
+            type="number"
+            formControlName="doctor"
+            class="form-control"
+            id="doctor"
+            [class.is-invalid]="form.controls['doctor'].invalid && form.controls['doctor'].touched"
+            />
+            <p *ngIf="form.controls['doctor'].invalid && form.controls['doctor'].touched" class="text-danger">
+              doctor is not valid
+            </p>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput4" class="form-label fs-4"
+            >Upload Message:</label
+          >
+          <input
+            type="file"
+            formControlName="fileUpload"
+            class="form-control"
+            id="fileUpload"
+            placeholder="Upload from text file"
+            (change)="readTextFile($event)"
+            [class.is-invalid]="form.controls['fileUpload'].invalid && form.controls['fileUpload'].touched"
+            />
+            <p *ngIf="form.controls['fileUpload'].invalid && form.controls['fileUpload'].touched  && form.controls['fileUpload'].errors != null" class="text-danger">
+              fileUpload is not valid.
+            </p>        </div>
+
+        <div class="container d-flex justify-content-center">
+          <button
+            class="btn btn-info"
+            type="submit"
+            class="btn btn-primary btn-lg"
+            [disabled]="!form.valid"
+            (click)="submitData()"
+          >
+Submit
+            <!-- <a routerLink="/defualtComponent" style=" color: white;" >Submit</a> -->
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
